@@ -1,100 +1,34 @@
 
 const suvenirs = [];
-let flag = false;
+let flag = true;
 
-const validate = (type, value) => typeof value ===  type && !Number.isNaN(value);
+const validate = (value, type = 'number') => typeof value ===  type && !Number.isNaN(value);
 
 
 function addSuvenir(){
 
-    if(confirm("Desea agregar un suvenir")){
+    while(flag){
         let name = prompt("Ingrese el nombre del suvenir");
         let cost = prompt("Ingrese el costo del suvenir");
         cost = Number(cost);
-        console.log(validate('number', cost));
         let available = confirm("Está disponible?");
-        flag = validate('string', name) && validate('number', cost) && validate('boolean', available);
-        if (flag=== true){
+        if ( validate(cost) ){
             const suvenir = {
                 'name' : name,
                 'cost' : cost,
                 'available' : available
             }
-            suvenirs.push(suvenir)
-            console.log(suvenirs)
+            suvenirs.push(suvenir);
+            console.log(suvenirs);
         }
-    }
-
-    
-    if(confirm("Desea agregar un suvenir")){
-        let name = prompt("Ingrese el nombre del suvenir");
-        let cost = prompt("Ingrese el costo del suvenir");
-        cost = Number(cost);
-        let available = confirm("Está disponible?");
-        flag = validate('string', name) && validate('number', cost) && validate('boolean', available);
-        if (flag=== true){
-            const suvenir = {
-                'name' : name,
-                'cost' : cost,
-                'available' : available
-            }
-            suvenirs.push(suvenir)
-            console.log(suvenirs)
-    
+        else{
+            alert("Datos incorrectos");
         }
+        flag= confirm("Desea agregar otro suvenir");
     }
-    
-    if(confirm("Desea agregar un suvenir")){
-        let name = prompt("Ingrese el nombre del suvenir");
-        let cost = prompt("Ingrese el costo del suvenir");
-        cost = Number(cost);
-        let available = confirm("Está disponible?");
-        flag = validate('string', name) && validate('number', cost) && validate('boolean', available);
-        if (flag=== true){
-            const suvenir = {
-                'name' : name,
-                'cost' : cost,
-                'available' : available
-            }
-            suvenirs.push(suvenir)
-            console.log(suvenirs)
-        }
-    }
-    
-    if(confirm("Desea agregar un suvenir")){
-        let name = prompt("Ingrese el nombre del suvenir");
-        let cost = prompt("Ingrese el costo del suvenir");
-        cost = Number(cost);
-        let available = confirm("Está disponible?");
-        flag = validate('string', name) && validate('number', cost) && validate('boolean', available);
-        if (flag=== true){
-            const suvenir = {
-                'name' : name,
-                'cost' : cost,
-                'available' : available
-            }
-            suvenirs.push(suvenir)
-            console.log(suvenirs)
-        }
-    }
-    
-    if(confirm("Desea agregar un suvenir")){
-        let name = prompt("Ingrese el nombre del suvenir");
-        let cost = prompt("Ingrese el costo del suvenir");
-        cost = Number(cost);
-        let available = confirm("Está disponible?");
-        flag = validate('string', name) && validate('number', cost) && validate('boolean', available);
-        if (flag=== true){
-            const suvenir = {
-                'name' : name,
-                'cost' : cost,
-                'available' : available
-            }
-            suvenirs.push(suvenir)
-            console.log(suvenirs)
-        }
-    }
+    console.log(suvenirs)
 }
+// addSuvenir(); Descomentar esta linea para ejecutar el reto2
 
 
 export default validate;
