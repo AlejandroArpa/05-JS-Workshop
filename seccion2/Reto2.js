@@ -23,7 +23,7 @@ if( available >= eatOutside || available >= buyBooks ){
     else if(available >= eatOutside){
         console.log("Puedes comer afuera")
     }
-    else{
+    else if(available >=buyBooks){
         console.log("Puedes comprar libros")
     }
 }

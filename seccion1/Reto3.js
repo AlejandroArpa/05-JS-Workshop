@@ -29,8 +29,8 @@ while(f2 && !f1){
     let price = Number (prompt("Precio del articulo: "));
     if(validate( price )){
         const article = {
-            'name': name,
-            'price': price,
+            name,
+            price
         }
         articles.push(article);
     }

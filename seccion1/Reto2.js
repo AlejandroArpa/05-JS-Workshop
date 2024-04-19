@@ -28,7 +28,8 @@ function addSuvenir(){
     }
     console.log(suvenirs)
 }
-// addSuvenir(); Descomentar esta linea para ejecutar el reto2
+// addSuvenir(); 
+// Descomentar esta linea para ejecutar el reto2
 
 
 export default validate;
